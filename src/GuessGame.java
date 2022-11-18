@@ -45,8 +45,16 @@ class Umpire{
 	void match() {				
 		for(int i=0;i<playersNumber.length;i++) {
 			if(playersNumber[i]==guesserNum && i<=playersNumber.length) {
-				System.out.println("Player " +  ++i + "Won");
-				break;
+				for(int j=1;i<playersNumber.length;j++) {
+					if(playersNumber[i]==playersNumber[j]) { 
+						System.out.println("Players" +  ++i  + "And" +  ++i  +"Won");
+						break;
+					}
+					else {
+						System.out.println("Player " +  ++i + "Won");
+					break;
+					}
+				}
 			}
 			else{
 				if(i==playersNumber.length-1 ) {
@@ -70,5 +78,6 @@ public class GuessGame {
 			System.out.print("Do You Want To Play Again:  ");
 			permit= scan.next();
 		}while(permission.equals(permit));
+		System.out.println("Exit");
 	}
 }
